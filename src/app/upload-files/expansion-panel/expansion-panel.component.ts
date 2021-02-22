@@ -35,7 +35,6 @@ export class ExpansionPanelComponent implements OnInit {
   startUpload(): void {
     this.uploadModel.files.forEach((file) => {
       const path = `${this.basePath}/${file.name}`;
-      const ref = this.storage.ref(path);
       this.task = this.storage.upload(path, file);
       file.percentage = this.task.percentageChanges();
     });
