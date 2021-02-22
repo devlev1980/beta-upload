@@ -1,9 +1,8 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {AngularFireStorage, AngularFireUploadTask} from '@angular/fire/storage';
-import {AngularFireDatabase} from '@angular/fire/database';
 import {Observable} from 'rxjs';
 import {UploadModel} from '../../models/upload.model';
-import {Position} from '../../models/position';
+import {ExpansionLocation} from './expansion-location';
 
 @Component({
   selector: 'yl-expansion-panel',
@@ -14,7 +13,7 @@ export class ExpansionPanelComponent implements OnInit {
   @Input() panelState;
   @Input() uploadModel: UploadModel;
   @Input() showExpansionPanel: boolean;
-  @Input() expansionPanelLocation: Position = Position.bottomRight;
+  @Input() expansionPanelLocation: ExpansionLocation = ExpansionLocation.BottomRight;
   @Output() cancelEmit: EventEmitter<boolean> = new EventEmitter<boolean>();
   task: AngularFireUploadTask;
   percentage: Observable<number>;

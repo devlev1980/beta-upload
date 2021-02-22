@@ -1,4 +1,3 @@
-import {Position} from './position';
 import {Observable} from 'rxjs';
 import {ExpansionLocation} from '../upload-files/expansion-panel/expansion-location';
 

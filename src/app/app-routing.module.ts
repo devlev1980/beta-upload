@@ -14,6 +14,11 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: () => import('../app/about/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: '**',
+    redirectTo: '/upload',
+    pathMatch: 'full'
   }
 ];
 
