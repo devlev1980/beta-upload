@@ -9,6 +9,7 @@
 <yl-expansion-panel [uploadModel]="uploadModel"
                     [panelState]="uploadModel?.isExpanded"
                     [showExpansionPanel]="showExpansionPanel"
+                    (cancelEmit)="onCancel($event)"
                     *ngIf="showExpansionPanel"></yl-expansion-panel>
 
 

@@ -1,19 +1,20 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ExpansionLocation} from '../expansion-panel/expansion-location';
 import {UploadModel} from '../../models/upload.model';
 
 @Component({
   selector: 'yl-upload-files',
   templateUrl: './upload-files.component.html',
-  styleUrls: ['./upload-files.component.scss']
+  styleUrls: ['./upload-files.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UploadFilesComponent implements OnInit {
   uploadModel: UploadModel;
-  filesList: File[] = [];
+  filesList: Array<File> = [];
   expansionPanelLocation: ExpansionLocation = ExpansionLocation.BottomLeft;
-  showExpansionPanel = false;
-  @ViewChild('fileInput') fileInput: ElementRef
-   allowMultiple: boolean = true;
+  @Input() showExpansionPanel;
+  @ViewChild('fileInput') fileInput: ElementRef;
+
   constructor() {
   }
 
@@ -21,6 +22,10 @@ export class UploadFilesComponent implements OnInit {
 
   }
 
+  /**
+   * Select files
+   * @param files: FileList
+   */
 
   onFileSelected(files: FileList): void {
     this.filesList = [];
@@ -29,6 +34,14 @@ export class UploadFilesComponent implements OnInit {
     }
     this.showExpansionPanel = true;
     this.uploadModel = new UploadModel(this.expansionPanelLocation, this.filesList, true);
-    this.fileInput.nativeElement.value = null
+    this.fileInput.nativeElement.value = null;
+  }
+
+  /**
+   * On cancel uploading emit from 'Expansion panel' component
+   * @param event: boolean
+   */
+  onCancel(event: boolean): void {
+    this.showExpansionPanel = event;
   }
 }

@@ -24,17 +24,11 @@ mat-expansion-panel{
     }
     mat-panel-description{
       position: relative !important;
-
-
     }
-
-
   }
-
   .mat-expansion-panel-content{
     background-color: #fff;
   }
-
   .mat-expansion-indicator::after {
     color: #ffffff;
   }
@@ -43,7 +37,6 @@ mat-expansion-panel{
     flex: 0 1 90% !important;
     flex-direction: row;
     overflow: hidden;
-
     mat-panel-description{
       position: relative !important;
     }
@@ -54,8 +47,6 @@ mat-expansion-panel{
       transform: translateY(-50%);
     }
   }
-
-
 }
 
 

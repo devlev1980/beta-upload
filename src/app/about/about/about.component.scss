@@ -1,10 +1,6 @@
+@import "../../../assets/styles/mixins";
 .about_container{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  height: 100vh;
+ @include flex-column-center();
   h2{
     font-size: 30px;
   }

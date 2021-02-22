@@ -1,3 +1,5 @@
+@import "../../../assets/styles/colors";
+@import "../../../assets/styles/mixins";
 .expansion_panel{
   position: fixed;
   min-width: 400px;
@@ -19,10 +21,9 @@
     max-height: 507px;
     overflow: auto;
     li{
-      border: 1px dashed #ccc;
+      border: 1px dashed $borderColor;
       padding: 10px;
-      display: flex;
-      flex-direction: column;
+      @include flex-column();
       align-items: center;
       justify-content: space-between;
       width: 100%;
@@ -32,13 +33,10 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-
         .file_info{
-          display: flex;
-          flex-direction: column;
+          @include flex-column();
           width: 100%;
         }
-
       }
       .file_progress{
         width: 100%;
@@ -51,8 +49,6 @@
           margin: 0 auto;
         }
       }
-
-
     }
   }
 
@@ -61,12 +57,12 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #CCDAE5;
+  background-color: $scrollBg;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #245682 ;
-  outline: 1px solid #245682 ;
+  background-color: $primaryColor ;
+  outline: 1px solid $primaryColor ;
   border-radius: 10px;
 }
 
