@@ -1,0 +1,68 @@
+@import "../../assets/styles/colors";
+mat-icon{
+  margin-right: 10px;
+  &.success{
+    color: $successIconColor;
+    cursor: pointer;
+  }
+  &.delete{
+    color: $deleteIconColor;
+  }
+}
+.mat-expansion-panel-body{
+  padding: 0 !important; ;
+}
+mat-expansion-panel{
+  max-width: 500px;
+  width: 100%;
+  background-color: $expansionPanelBg !important;
+  mat-expansion-panel-header{
+    color: white !important;
+    position: relative;
+    mat-panel-title{
+      color: #ffffff !important;
+    }
+    mat-panel-description{
+      position: relative !important;
+
+
+    }
+
+
+  }
+
+  .mat-expansion-panel-content{
+    background-color: #fff;
+  }
+
+  .mat-expansion-indicator::after {
+    color: #ffffff;
+  }
+  .mat-content {
+    display: flex;
+    flex: 0 1 90% !important;
+    flex-direction: row;
+    overflow: hidden;
+
+    mat-panel-description{
+      position: relative !important;
+    }
+    button{
+      position: absolute !important;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+

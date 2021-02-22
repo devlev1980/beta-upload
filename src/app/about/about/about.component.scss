@@ -1,0 +1,19 @@
+.about_container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
+  h2{
+    font-size: 30px;
+  }
+  p{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    mat-icon{
+      margin-left: 0.25rem;
+    }
+  }
+}

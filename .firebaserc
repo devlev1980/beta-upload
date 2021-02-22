@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "beta-exam": {
+      "hosting": {
+        "beta-exam": [
+          "beta-exam"
+        ]
+      }
+    }
+  }
+}

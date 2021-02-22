@@ -1,0 +1,42 @@
+<div class="expansion_panel" [ngClass]="[expansionPanelLocation]">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelState = true"
+                         (closed)="panelState = false" [(expanded)]="uploadModel.isExpanded">
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Upload <span *ngIf="uploadModel.files?.length > 0" class="filelist_count">{{uploadModel.files?.length}}</span> items
+        </mat-panel-title>
+        <button (click)="onCloseExpansionPanelPanel()">
+          <mat-icon class="mat-18">close</mat-icon>
+        </button>
+        <mat-panel-description>
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <ul class="files_container">
+        <li *ngFor="let file of uploadModel?.files">
+          <div class="file_container">
+            <mat-icon class="mat-18">email</mat-icon>
+            <div class="file_info">
+              <span>{{file.name}}</span>
+              <span>{{file.size | fileSizeFormat}}</span>
+            </div>
+          </div>
+          <div class="file_progress" >
+            <mat-progress-bar [value]="file.percentage  | async " [bufferValue]="(file.percentage | async)">{{file.percentage}}</mat-progress-bar>
+            <button>
+              <mat-icon class="delete"  *ngIf="(file.percentage | async )< 100;else isDone" #pauseIcon (click)="onPauseUploadingFile()">delete</mat-icon>
+            </button>
+            <ng-template #isDone>
+              <button>
+                <mat-icon class="success" >check_circle_outline</mat-icon>
+              </button>
+            </ng-template>
+          </div>
+        </li>
+      </ul>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

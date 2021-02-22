@@ -1,0 +1,14 @@
+<div class="upload_container">
+  <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">
+    <mat-icon class="mat-18">cloud_upload</mat-icon>
+    Upload files
+  </button>
+  <input hidden (change)="onFileSelected(fileInput.files)"  multiple #fileInput type="file" id="file">
+</div>
+
+<yl-expansion-panel [uploadModel]="uploadModel"
+                    [panelState]="uploadModel?.isExpanded"
+                    [showExpansionPanel]="showExpansionPanel"
+                    *ngIf="showExpansionPanel"></yl-expansion-panel>
+
+
